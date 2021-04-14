@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vmms.dao.gzal.BtsjMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.vmms.model.Btsj">
+		<id column="BTSJ_ID" property="btsjId" />
+		<result column="BTSJ_TIME" property="btsjTime" />
+		<result column="BTSJ_BYQTZID" property="btsjByqtzid" />
+		<result column="BTSJ_H2HL" property="btsjH2hl" />
+		<result column="BTSJ_C2H2HL" property="btsjC2h2hl" />
+		<result column="BTSJ_C2H4HL" property="btsjC2h4hl" />
+		<result column="BTSJ_C2H6HL" property="btsjC2h6hl" />
+		<result column="BTSJ_CH4HL" property="btsjCh4hl" />
+		<result column="BTSJ_ZTHL" property="btsjZthl" />
+		<result column="BTSJ_COHL" property="btsjCohl" />
+		<result column="BTSJ_CO2HL" property="btsjCo2hl" />
+		<result column="BTSJ_H2JDCQSL" property="btsjH2jdcqsl" />
+		<result column="BTSJ_C2H2JDCQSL" property="btsjC2h2jdcqsl" />
+		<result column="BTSJ_ZTJDCQSL" property="btsjZtjdcqsl" />
+		<result column="BTSJ_ZTXDCQSL" property="btsjZtxdcqsl" />
+		<result column="BTSJ_COJDCQSL" property="btsjCojdcqsl" />
+		<result column="BTSJ_CO2JDCQSL" property="btsjCo2jdcqsl" />
+		<result column="BTSJ_RZZLDZah_CZC" property="btsjRzzldzahCzc" />
+		<result column="BTSJ_RZZLDZbh_CZC" property="btsjRzzldzbhCzc" />
+		<result column="BTSJ_RZZLDZch_CZC" property="btsjRzzldzchCzc" />
+		<result column="BTSJ_RZZLDZam_CZC" property="btsjRzzldzamCzc" />
+		<result column="BTSJ_RZZLDZbm_CZC" property="btsjRzzldzbmCzc" />
+		<result column="BTSJ_RZZLDZcm_CZC" property="btsjRzzldzcmCzc" />
+		<result column="BTSJ_RZZLDZal_CZC" property="btsjRzzldzalCzc" />
+		<result column="BTSJ_RZZLDZbl_CZC" property="btsjRzzldzblCzc" />
+		<result column="BTSJ_RZZLDZcl_CZC" property="btsjRzzldzclCzc" />
+		<result column="BTSJ_SHZFDL" property="btsjShzfdl" />
+		<result column="BTSJ_SFCZ_DXFDTU_GP" property="btsjSfczDxfdtuGp" />
+		<result column="BTSJ_FDFZ" property="btsjFdfz" />
+		<result column="BTSJ_TXJDDL" property="btsjTxjddl" />
+		<result column="BTSJ_JYDZ_TXDDJYDZ" property="btsjJydzTxddjydz" />
+		<result column="BTSJ_JYDZ_JJDDJYDZ" property="btsjJydzJjddjydz" />
+		<result column="BTSJ_YZHQL" property="btsjYzhql" />
+		<result column="BTSJ_JYDZ_GDZDJD" property="btsjJydzGdzdjd" />
+		<result column="BTSJ_JYDZ_ZDGDJD" property="btsjJydzZdgdjd" />
+		<result column="BTSJ_JYDZ_DDGZJD" property="btsjJydzDdgzjd" />
+		<result column="BTSJ_JYDZ_GDZDJD_XSB" property="btsjJydzGdzdjdXsb" />
+		<result column="BTSJ_JYDZ_ZDGDJD_XSB" property="btsjJydzZdgdjdXsb" />
+		<result column="BTSJ_JYDZ_DDGZJD_XSB" property="btsjJydzDdgzjdXsb" />
+		<result column="BTSJ_JYDZ_GDZDJD_JHZS" property="btsjJydzGdzdjdJhzs" />
+		<result column="BTSJ_JYDZ_ZDGDJD_JHZS" property="btsjJydzZdgdjdJhzs" />
+		<result column="BTSJ_JYDZ_DDGZJD_JHZS" property="btsjJydzDdgzjdJhzs" />
+		<result column="BTSJ_JYDZ_GZDY_DDZ" property="btsjJydzGzdyDdz" />
+		<result column="BTSJ_JYDZ_GZDY_DDXSB" property="btsjJydzGzdyDdxsb" />
+		<result column="BTSJ_JYDZ_GZDY_DDJHZS" property="btsjJydzGzdyDdjhzs" />
+		<result column="BTSJ_DLZK_GYDDY_aXCZC" property="btsjDlzkGyddyAxczc" />
+		<result column="BTSJ_DLZK_GYDDY_bXCZC" property="btsjDlzkGyddyBxczc" />
+		<result column="BTSJ_DLZK_GYDDY_cXCZC" property="btsjDlzkGyddyCxczc" />
+		<result column="BTSJ_RZBB_GYDZY_aX" property="btsjRzbbGydzyAx" />
+		<result column="BTSJ_RZBB_ZYDDY_aX" property="btsjRzbbZyddyAx" />
+		<result column="BTSJ_RZBB_GYDDY_aX" property="btsjRzbbGyddyAx" />
+		<result column="BTSJ_HWTXSB_SFYWYC" property="btsjHwtxsbSfywyc" />
+		<result column="BTSJ_RZJS_GY_ZDYJD" property="btsjRzjsGyZdyjd" />
+		<result column="BTSJ_RZJS_ZY_GDYJD" property="btsjRzjsZyGdyjd" />
+		<result column="BTSJ_RZJS_DY_GZYJD" property="btsjRzjsDyGzyjd" />
+		<result column="BTSJ_RZJS_GZYDD" property="btsjRzjsGzydd" />
+		<result column="BTSJ_YZWSHL" property="btsjYzwshl" />
+		<result column="BTSJ_YJZSHYS" property="btsjYjzshys" />
+		<result column="BTSJ_JGC" property="btsjJgc" />
+		<result column="BTSJ_TQHL" property="btsjTqhl" />
+		<result column="BTSJ_JYZJHD" property="btsjJyzjhd" />
+		<result column="BTSJ_RZPXSY_abGYRZ_dPDXGXS" property="btsjRzpxsyAbgyrzDpdxgxs" />
+		<result column="BTSJ_RZPXSY_abGYRZ_zPDXGXS" property="btsjRzpxsyAbgyrzZpdxgxs" />
+		<result column="BTSJ_RZPXSY_abGYRZ_gPDXGXS" property="btsjRzpxsyAbgyrzGpdxgxs" />
+		<result column="BTSJ_RZPXSY_bcGYRZ_dPDXGXS" property="btsjRzpxsyBcgyrzDpdxgxs" />
+		<result column="BTSJ_RZPXSY_bcGYRZ_zPDXGXS" property="btsjRzpxsyBcgyrzZpdxgxs" />
+		<result column="BTSJ_RZPXSY_bcGYRZ_gPDXGXS" property="btsjRzpxsyBcgyrzGpdxgxs" />
+		<result column="BTSJ_RZPXSY_acGYRZ_dPDXGXS" property="btsjRzpxsyAcgyrzDpdxgxs" />
+		<result column="BTSJ_RZPXSY_acGYRZ_zPDXGXS" property="btsjRzpxsyAcgyrzZpdxgxs" />
+		<result column="BTSJ_RZPXSY_acGYRZ_gPDXGXS" property="btsjRzpxsyAcgyrzGpdxgxs" />
+		<result column="BTSJ_RZDRL_GYDZDYJD" property="btsjRzdrlGydzdyjd" />
+		<result column="BTSJ_RZDRL_ZYDGDYJD" property="btsjRzdrlZydgdyjd" />
+		<result column="BTSJ_RZDRL_DYDGZYJD" property="btsjRzdrlDydgzyjd" />
+		<result column="BTSJ_RZDRL_GZDYDD" property="btsjRzdrlGzdydd" />
+		<result column="BTSJ_RZZLDZ_GY_RZBPHXS" property="btsjRzzldzGyRzbphxs" />
+		<result column="BTSJ_RZZLDZ_ZY_RZBPHXS" property="btsjRzzldzZyRzbphxs" />
+		<result column="BTSJ_RZZLDZ_DY_RZBPHXS" property="btsjRzzldzDyRzbphxs" />
+		<result column="BTSJ_SFCZ_DXFDTU_TGP" property="btsjSfczDxfdtuTgp" />
+		<result column="BTSJ_DLZK_GYDDY_RZBPHXS" property="btsjDlzkGyddyRzbphxs" />
+		<result column="BTSJ_DLZK_ZYDDY_aXCZC" property="btsjDlzkZyddyAxczc" />
+		<result column="BTSJ_DLZK_ZYDDY_bXCZC" property="btsjDlzkZyddyBxczc" />
+		<result column="BTSJ_DLZK_ZYDDY_cXCZC" property="btsjDlzkZyddyCxczc" />
+		<result column="BTSJ_DLZK_ZYDDY_RZBPHXS" property="btsjDlzkZyddyRzbphxs" />
+		<result column="BTSJ_DLZK_GYDZY_aXCZC" property="btsjDlzkGydzyAxczc" />
+		<result column="BTSJ_DLZK_GYDZY_bXCZC" property="btsjDlzkGydzyBxczc" />
+		<result column="BTSJ_DLZK_GYDZY_cXCZC" property="btsjDlzkGydzyCxczc" />
+		<result column="BTSJ_DLZK_GYDZY_RZBPHXS" property="btsjDlzkGydzyRzbphxs" />
+		<result column="BTSJ_RZBB_GYDZY_bX" property="btsjRzbbGydzyBx" />
+		<result column="BTSJ_RZBB_ZYDDY_bX" property="btsjRzbbZyddyBx" />
+		<result column="BTSJ_RZBB_GYDDY_bX" property="btsjRzbbGyddyBx" />
+		<result column="BTSJ_RZBB_GYDZY_cX" property="btsjRzbbGydzyCx" />
+		<result column="BTSJ_RZBB_ZYDDY_cX" property="btsjRzbbZyddyCx" />
+		<result column="BTSJ_RZBB_GYDDY_cX" property="btsjRzbbGyddyCx" />
+		<result column="BTSJ_HWTXSB_SFTXLC" property="btsjHwtxsbSftxlc" />
+		<result column="BTSJ_RZPXSY_abZYRZ_dPDXGXS" property="btsjRzpxsyAbzyrzDpdxgxs" />
+		<result column="BTSJ_RZPXSY_abZYRZ_zPDXGXS" property="btsjRzpxsyAbzyrzZpdxgxs" />
+		<result column="BTSJ_RZPXSY_abZYRZ_gPDXGXS" property="btsjRzpxsyAbzyrzGpdxgxs" />
+		<result column="BTSJ_RZPXSY_bcZYRZ_dPDXGXS" property="btsjRzpxsyBczyrzDpdxgxs" />
+		<result column="BTSJ_RZPXSY_bcZYRZ_zPDXGXS" property="btsjRzpxsyBczyrzZpdxgxs" />
+		<result column="BTSJ_RZPXSY_bcZYRZ_gPDXGXS" property="btsjRzpxsyBczyrzGpdxgxs" />
+		<result column="BTSJ_RZPXSY_acZYRZ_dPDXGXS" property="btsjRzpxsyAczyrzDpdxgxs" />
+		<result column="BTSJ_RZPXSY_acZYRZ_zPDXGXS" property="btsjRzpxsyAczyrzZpdxgxs" />
+		<result column="BTSJ_RZPXSY_acZYRZ_gPDXGXS" property="btsjRzpxsyAczyrzGpdxgxs" />
+		<result column="BTSJ_RZPXSY_abDYRZ_dPDXGXS" property="btsjRzpxsyAbdyrzDpdxgxs" />
+		<result column="BTSJ_RZPXSY_abDYRZ_zPDXGXS" property="btsjRzpxsyAbdyrzZpdxgxs" />
+		<result column="BTSJ_RZPXSY_abDYRZ_gPDXGXS" property="btsjRzpxsyAbdyrzGpdxgxs" />
+		<result column="BTSJ_RZPXSY_bcDYRZ_dPDXGXS" property="btsjRzpxsyBcdyrzDpdxgxs" />
+		<result column="BTSJ_RZPXSY_bcDYRZ_zPDXGXS" property="btsjRzpxsyBcdyrzZpdxgxs" />
+		<result column="BTSJ_RZPXSY_bcDYRZ_gPDXGXS" property="btsjRzpxsyBcdyrzGpdxgxs" />
+		<result column="BTSJ_RZPXSY_acDYRZ_dPDXGXS" property="btsjRzpxsyAcdyrzDpdxgxs" />
+		<result column="BTSJ_RZPXSY_acDYRZ_zPDXGXS" property="btsjRzpxsyAcdyrzZpdxgxs" />
+		<result column="BTSJ_RZPXSY_acDYRZ_gPDXGXS" property="btsjRzpxsyAcdyrzGpdxgxs" />
+		<result column="BTSJ_ZDXH_ISOK_RZBX" property="btsjZdxhIsokRzbx" />
+		<result column="BTSJ_ZDXH_ISOK_RZSD" property="btsjZdxhIsokRzsd" />
+		<result column="BTSJ_ZDXH_ISOK_TXJJJSD" property="btsjZdxhIsokTxjjjsd" />
+		<result column="BTSJ_ZDXH_ISOK_TXBX" property="btsjZdxhIsokTxbx" />
+		<result column="BTSJ_RZBB_GDZ_aX" property="btsjRzbbGdzAx" />
+		<result column="BTSJ_RZBB_ZDD_aX" property="btsjRzbbZddAx" />
+		<result column="BTSJ_RZBB_GDD_aX" property="btsjRzbbGddAx" />
+		<result column="BTSJ_RZBB_GDZ_bX" property="btsjRzbbGdzBx" />
+		<result column="BTSJ_RZBB_ZDD_bX" property="btsjRzbbZddBx" />
+		<result column="BTSJ_RZBB_GDD_bX" property="btsjRzbbGddBx" />
+		<result column="BTSJ_RZBB_GDZ_cX" property="btsjRzbbGdzCx" />
+		<result column="BTSJ_RZBB_ZDD_cX" property="btsjRzbbZddCx" />
+		<result column="BTSJ_RZBB_GDD_cX" property="btsjRzbbGddCx" />
+		<result column="BTSJ_WJLJ" property="btsjWjlj" />
+		<result column="BTSJ_ALID" property="btsjAlid" />
+		<result column="BTSJ_KZSH_CZC" property="btsjKzshCzc" />
+		<result column="BTSJ_ZPFZ" property="btsjZpfz" />
+		<result column="BTSJ_JPFZ" property="btsjJpfz" />
+		<result column="BTSJ_ZDS" property="btsjZds" />
+		<result column="BTSJ_RDWD" property="btsjRdwd" />
+		<result column="BTSJ_XDWC" property="btsjXdwc" />
+	</resultMap>
+	<select id="getBtsjDataByALID" resultMap="BaseResultMap">
+		SELECT
+		*
+		FROM
+		btsj b
+		where
+		b.BTSJ_ALID = #{alId}
+	</select>
+
+</mapper>

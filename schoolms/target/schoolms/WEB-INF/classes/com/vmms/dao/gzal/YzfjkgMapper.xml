@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vmms.dao.gzal.YzfjkgMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.vmms.model.Yzfjkg">
+        <id column="YZFJKG_ID" property="yzfjkgId" />
+        <result column="YZFJKG_BYQTZID" property="yzfjkgByqtzid" />
+        <result column="YZFJKG_TIME" property="yzfjkgTime" />
+        <result column="YZFJKG_CTJCDZ" property="yzfjkgCtjcdz" />
+        <result column="YZFJKG_RZZLDZCZC" property="yzfjkgRzzldzczc" />
+        <result column="YZFJKG_RZZLDZHC" property="yzfjkgRzzldzhc" />
+        <result column="YZFJKG_ZDXHFX" property="yzfjkgZdxhfx" />
+        <result column="YZFJKG_GDSJAX" property="yzfjkgGdsjax" />
+        <result column="YZFJKG_GDSJBX" property="yzfjkgGdsjbx" />
+        <result column="YZFJKG_GDSJCX" property="yzfjkgGdsjcx" />
+        <result column="YZFJKG_GDDZAX_CZC" property="yzfjkgGddzaxCzc" />
+        <result column="YZFJKG_GDDZBX_CZC" property="yzfjkgGddzbxCzc" />
+        <result column="YZFJKG_GDDZCX_CZC" property="yzfjkgGddzcxCzc" />
+        <result column="YZFJKG_H2HL" property="yzfjkgH2hl" />
+        <result column="YZFJKG_C2H2HL" property="yzfjkgC2h2hl" />
+        <result column="YZFJKG_C2H4HL" property="yzfjkgC2h4hl" />
+        <result column="YZFJKG_C2H6HL" property="yzfjkgC2h6hl" />
+        <result column="YZFJKG_CH4HL" property="yzfjkgCh4hl" />
+        <result column="YZFJKG_ZTHL" property="yzfjkgZthl" />
+        <result column="YZFJKG_H2JDCSSL" property="yzfjkgH2jdcssl" />
+        <result column="YZFJKG_C2H2JDCSSL" property="yzfjkgC2h2jdcssl" />
+        <result column="YZFJKG_ZTJDCSSL" property="yzfjkgZtjdcssl" />
+        <result column="YZFJKG_ZTXDCSSL" property="yzfjkgZtxdcssl" />
+        <result column="YZFJKG_RZZLDZ_CLZBPHXS" property="yzfjkgRzzldzClzbphxs" />
+        <result column="YZFJKG_WJLJ" property="yzfjkgWjlj" />
+        <result column="YZFJKG_ALID" property="yzfjkgAlid" />
+    </resultMap>
+    <select id="getYzfjkgDataById" resultMap="BaseResultMap">
+		SELECT
+		*
+		FROM
+		yzfjkg y
+		where
+		y.YZFJKG_ALID = #{alId}
+	</select>
+
+</mapper>

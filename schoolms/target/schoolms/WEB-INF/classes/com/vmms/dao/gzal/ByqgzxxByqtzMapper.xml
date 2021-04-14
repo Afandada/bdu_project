@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vmms.dao.gzal.ByqgzxxByqtzMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.vmms.model.ByqgzxxByqtz">
+		<id column="byqgzxx_byqtz_id" property="byqgzxxByqtzId" />
+		<result column="BYQTZ_ID" property="byqtzId" />
+		<result column="BYQTZ_SHCCJID" property="byqtzShccjid" />
+		<result column="BYQTZ_SSWSH" property="byqtzSswsh" />
+		<result column="BYQTZ_SSBDZ" property="byqtzSsbdz" />
+		<result column="BYQTZ_CCBH" property="byqtzCcbh" />
+		<result column="BYQTZ_CCRQ" property="byqtzCcrq" />
+		<result column="BYQTZ_SBMC" property="byqtzSbmc" />
+		<result column="BYQTZ_YXBH" property="byqtzYxbh" />
+		<result column="BYQTZ_DYDJ" property="byqtzDydj" />
+		<result column="BYQTZ_TYRQ" property="byqtzTyrq" />
+		<result column="BYQTZ_ALMCGL" property="byqtzAlmcgl" />
+		<result column="BYQTZ_EDRL" property="byqtzEdrl" />
+		<result column="BYQTZ_WJLJ" property="byqtzWjlj" />
+		<result column="BYQGZXX_ID" property="byqgzxxId" />
+		<result column="BYQGZXX_SFXZAL" property="byqgzxxSfxzal" />
+		<result column="BYQGZXX_TIME" property="byqgzxxTime" />
+		<result column="BYQGZXX_YCHBJ" property="byqgzxxYchbj" />
+		<result column="BYQGZXX_YCHJIBW" property="byqgzxxYchjibw" />
+		<result column="BYQGZXX_YCHYYJSH" property="byqgzxxYchyyjsh" />
+		<result column="BYQGZXX_YCHYYJT" property="byqgzxxYchyyjt" />
+		<result column="BYQGZXX_ZRYY" property="byqgzxxZryy" />
+		<result column="BYQGZXX_GZHFL" property="byqgzxxGzhfl" />
+		<result column="BYQGZXX_SFTQFXYC" property="byqgzxxSftqfxyc" />
+		<result column="BYQGZXX_BYQTZID" property="byqgzxxByqtzid" />
+		<result column="GZXZAL_BHDZID" property="gzxzalBhdzid" />
+		<result column="BYQGZXX_FSHSGK" property="byqgzxxFshsgk" />
+		<result column="BYQGZXX_FXSD" property="byqgzxxFxsd" />
+		<result column="BYQGZXX_GZGBYY" property="byqgzxxGzgbyy" />
+		<result column="BYQGZXX_TQQTSHM" property="byqgzxxTqqtshm" />
+		<result column="BYQGZXX_GZFSHDD" property="byqgzxxGzfshdd" />
+		<result column="BYQGZXX_CYQX" property="byqgzxxCyqx" />
+		<result column="BYQGZXX_ZDSD" property="byqgzxxZdsd" />
+		<result column="BYQGZXX_XCHJCH" property="byqgzxxXchjch" />
+		<result column="BYQGZXX_FCHJCH" property="byqgzxxFchjch" />
+		<result column="BYQGZXX_CHBZD" property="byqgzxxChbzd" />
+		<result column="BYQGZXX_CHLJZHGCSH" property="byqgzxxChljzhgcsh" />
+		<result column="BYQGZXX_SBRY" property="byqgzxxSbry" />
+		<result column="BYQGZXX_LXFSH" property="byqgzxxLxfsh" />
+		<result column="BYQGZXX_SHHYJ" property="byqgzxxShhyj" />
+		<result column="BYQGZXX_ALXGTPLJ" property="byqgzxxAlxgtplj" />
+		<result column="BYQGZXX_BGYJLJ" property="byqgzxxBgyjlj" />
+		<result column="BYQGZXX_ALWJBH" property="byqgzxxAlwjbh" />
+		<result column="BYQTZ_XS" property="byqtzXs" />
+		<result column="BYQTZ_XB" property="byqtzXb" />
+		<result column="BYQTZ_EDPL" property="byqtzEdpl" />
+		<result column="BYQTZ_FWDJ" property="byqtzFwdj" />
+		<result column="BYQTZ_RZXS" property="byqtzRzxs" />
+		<result column="BYQTZ_LJZBH" property="byqtzLjzbh" />
+		<result column="BYQTZ_LQFS" property="byqtzLqfs" />
+		<result column="BYQTZ_KZDL" property="byqtzKzdl" />
+		<result column="BYQTZ_CHCRQ" property="byqtzChcrq" />
+		<result column="BYQTZ_JYNRDJ" property="byqtzJynrdj" />
+		<result column="BYQTZ_JYJZH" property="byqtzJyjzh" />
+		<result column="BYQTZ_JGXSH" property="byqtzJgxsh" />
+		<result column="BYQTZ_JXZB" property="byqtzJxzb" />
+		<result column="BYQTZ_TYWZH" property="byqtzTywzh" />
+		<result column="BYQTZ_ZLQRL" property="byqtzZlqrl" />
+		<result column="BYQTZ_XJXJ_GY" property="byqtzXjxjGy" />
+		<result column="BYQTZ_XJXJ_ZY" property="byqtzXjxjZy" />
+		<result column="BYQTZ_XJXJ_DY" property="byqtzXjxjDy" />
+		<result column="BYQTZ_FJT" property="byqtzFjt" />
+		<result column="BYQTZ_YXNX" property="byqtzYxnx" />
+	</resultMap>
+	<select id="getAlALIDs" resultType="java.lang.Integer">
+		SELECT
+		BYQGZXX_ID
+		FROM
+		byqgzxx_byqtz
+		where 1=1
+	</select>
+
+	<select id="getByqtzAlDataById" resultMap="BaseResultMap">
+		SELECT
+		*
+		FROM
+		byqgzxx_byqtz b
+		where
+		b.BYQGZXX_ID = #{alId}
+	</select>
+
+
+</mapper>

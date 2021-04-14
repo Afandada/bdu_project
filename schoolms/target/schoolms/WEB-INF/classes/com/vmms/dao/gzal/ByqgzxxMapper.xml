@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vmms.dao.gzal.ByqgzxxMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.vmms.model.Byqgzxx">
+        <id column="BYQGZXX_ID" property="byqgzxxId" />
+        <result column="BYQGZXX_SFXZAL" property="byqgzxxSfxzal" />
+        <result column="BYQGZXX_TIME" property="byqgzxxTime" />
+        <result column="BYQGZXX_YCHBJ" property="byqgzxxYchbj" />
+        <result column="BYQGZXX_YCHJIBW" property="byqgzxxYchjibw" />
+        <result column="BYQGZXX_YCHYYJSH" property="byqgzxxYchyyjsh" />
+        <result column="BYQGZXX_YCHYYJT" property="byqgzxxYchyyjt" />
+        <result column="BYQGZXX_ZRYY" property="byqgzxxZryy" />
+        <result column="BYQGZXX_GZHFL" property="byqgzxxGzhfl" />
+        <result column="BYQGZXX_SFTQFXYC" property="byqgzxxSftqfxyc" />
+        <result column="BYQGZXX_BYQTZID" property="byqgzxxByqtzid" />
+        <result column="GZXZAL_BHDZID" property="gzxzalBhdzid" />
+        <result column="BYQGZXX_FSHSGK" property="byqgzxxFshsgk" />
+        <result column="BYQGZXX_FXSD" property="byqgzxxFxsd" />
+        <result column="BYQGZXX_GZGBYY" property="byqgzxxGzgbyy" />
+        <result column="BYQGZXX_TQQTSHM" property="byqgzxxTqqtshm" />
+        <result column="BYQGZXX_GZFSHDD" property="byqgzxxGzfshdd" />
+        <result column="BYQGZXX_CYQX" property="byqgzxxCyqx" />
+        <result column="BYQGZXX_ZDSD" property="byqgzxxZdsd" />
+        <result column="BYQGZXX_XCHJCH" property="byqgzxxXchjch" />
+        <result column="BYQGZXX_FCHJCH" property="byqgzxxFchjch" />
+        <result column="BYQGZXX_CHBZD" property="byqgzxxChbzd" />
+        <result column="BYQGZXX_CHLJZHGCSH" property="byqgzxxChljzhgcsh" />
+        <result column="BYQGZXX_SBRY" property="byqgzxxSbry" />
+        <result column="BYQGZXX_LXFSH" property="byqgzxxLxfsh" />
+        <result column="BYQGZXX_SHHYJ" property="byqgzxxShhyj" />
+        <result column="BYQGZXX_ALXGTPLJ" property="byqgzxxAlxgtplj" />
+        <result column="BYQGZXX_BGYJLJ" property="byqgzxxBgyjlj" />
+        <result column="BYQGZXX_ALWJBH" property="byqgzxxAlwjbh" />
+    </resultMap>
+
+</mapper>

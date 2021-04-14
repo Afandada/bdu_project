@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vmms.dao.sys.RoleMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.vmms.model.Role">
+        <id column="RoleId" property="RoleId" />
+        <result column="RoleName" property="RoleName" />
+        <result column="RoleAlias" property="RoleAlias" />
+        <result column="RoleStatus" property="RoleStatus" />
+        <result column="RoleRemark" property="RoleRemark" />
+        <result column="CreateUser" property="CreateUser" />
+        <result column="CreateTime" property="CreateTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        RoleId, RoleName, RoleAlias, RoleStatus, RoleRemark, CreateUser, CreateTime
+    </sql>
+
+</mapper>

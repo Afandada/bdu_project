@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vmms.dao.sys.UserMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.vmms.model.User">
+		<id column="id" property="id" />
+		<result column="UserId" property="UserId" />
+		<result column="UserName" property="UserName" />
+		<result column="UserPwd" property="UserPwd" />
+		<result column="UserRealName" property="UserRealName" />
+		<result column="UserGender" property="UserGender" />
+		<result column="UserEmail" property="UserEmail" />
+		<result column="UserAddress" property="UserAddress" />
+		<result column="UserPic" property="UserPic" />
+		<result column="UserPhone" property="UserPhone" />
+		<result column="RoleId" property="RoleId" />
+		<result column="SchoolUserId" property="SchoolUserId" />
+		<result column="UserStatus" property="UserStatus" />
+		<result column="CreateUser" property="CreateUser" />
+		<result column="CreateTime" property="CreateTime" />
+	</resultMap>
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		id, UserId, UserName, UserPwd, UserRealName, UserGender,
+		UserEmail,
+		UserAddress, UserPic, UserPhone, RoleId, SchoolUserId,
+		UserStatus,
+		CreateUser, CreateTime
+	</sql>
+	<!-- 连接查询展示所有数据 zzj 4-27 -->
+	<select id="seachAndSubject" resultType="com.vmms.model.User">
+		SELECT
+		one.*,
+		two.SchoolName as SchoolName
+		from
+		(select
+		u.*,
+		r.RoleName   AS RoleName 
+		from t_user as u
+		LEFT JOIN
+		t_role
+		as r ON
+		r.RoleId=u.RoleId   
+		WHERE
+		1=1
+		<if test="status != null and status !=''">
+			and u.UserStatus = #{status}
+		</if>
+		<if test="userRealName != null and userRealName !=''">
+			and u.UserRealName like concat('%',#{userRealName},'%')
+		</if>
+		<if test="roleName != null and roleName !=''">
+			and r.RoleName like concat('%',#{roleName},'%')
+		</if>
+		<if test="roleStatus != null and roleStatus !=''">
+			and r.RoleStatus = #{roleStatus}
+		</if>
+		) one
+		LEFT JOIN t_school as two ON one.SchoolUserId= two.UserId
+		WHERE
+		1=1
+		<if test="schoolStatus != null and schoolStatus !=''">
+			and (two.SchoolStatus = #{schoolStatus}
+			or
+			one.SchoolUserId
+			is NULL )
+		</if>
+		<if test="shoolName != null and shoolName !=''">
+			and two.SchoolName like concat('%',#{shoolName},'%')
+		</if>
+		<if test="schoolUserId != null and schoolUserId != ''">
+			and two.SchoolId = #{schoolUserId}
+		</if>
+
+	</select>
+
+</mapper>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vmms.dao.gzal.TgsjMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.vmms.model.Tgsj">
+        <id column="TGSJ_ID" property="tgsjId" />
+        <result column="TGSJ_BYQTZID" property="tgsjByqtzid" />
+        <result column="TGSJ_TIME" property="tgsjTime" />
+        <result column="TGSJ_HWTXSBJG_TGYW" property="tgsjHwtxsbjgTgyw" />
+        <result column="TGSJ_H2" property="tgsjH2" />
+        <result column="TGSJ_C2H2" property="tgsjC2h2" />
+        <result column="TGSJ_C2H4" property="tgsjC2h4" />
+        <result column="TGSJ_CH4" property="tgsjCh4" />
+        <result column="TGSJ_ZT" property="tgsjZt" />
+        <result column="TGSJ_SFCZDXFDTP_GP" property="tgsjSfczdxfdtpGp" />
+        <result column="TGSJ_FDFZ" property="tgsjFdfz" />
+        <result column="TGSJ_TGJZSHYSAX" property="tgsjTgjzshysax" />
+        <result column="TGSJ_TGJZSHYSBX" property="tgsjTgjzshysbx" />
+        <result column="TGSJ_TGJZSHYSCX" property="tgsjTgjzshyscx" />
+        <result column="TGSJ_TGJZSHYSOX" property="tgsjTgjzshysox" />
+        <result column="TGSJ_TGJZSHYSAmX" property="tgsjTgjzshysamx" />
+        <result column="TGSJ_TGJZSHYBmX" property="tgsjTgjzshybmx" />
+        <result column="TGSJ_TGJZSHYCmX" property="tgsjTgjzshycmx" />
+        <result column="TGSJ_TGJZSHYOmX" property="tgsjTgjzshyomx" />
+        <result column="TGSJ_TGDRLAX" property="tgsjTgdrlax" />
+        <result column="TGSJ_TGDRLBX" property="tgsjTgdrlbx" />
+        <result column="TGSJ_TGDRLCX" property="tgsjTgdrlcx" />
+        <result column="TGSJ_TGDRLOX" property="tgsjTgdrlox" />
+        <result column="TGSJ_TGDRLAmX" property="tgsjTgdrlamx" />
+        <result column="TGSJ_TGDRLBmX" property="tgsjTgdrlbmx" />
+        <result column="TGSJ_TGDRLCmX" property="tgsjTgdrlcmx" />
+        <result column="TGSJ_TGDRLOmX" property="tgsjTgdrlomx" />
+        <result column="TGSJ_TGJYDZ_AX" property="tgsjTgjydzAx" />
+        <result column="TGSJ_TGJYDZ_BX" property="tgsjTgjydzBx" />
+        <result column="TGSJ_TGJYDZ_CX" property="tgsjTgjydzCx" />
+        <result column="TGSJ_TGJYDZ_OX" property="tgsjTgjydzOx" />
+        <result column="TGSJ_TGJYDZ_AmX" property="tgsjTgjydzAmx" />
+        <result column="TGSJ_TGJYDZ_BmX" property="tgsjTgjydzBmx" />
+        <result column="TGSJ_TGJYDZ_CmX" property="tgsjTgjydzCmx" />
+        <result column="TGSJ_TGJYDZ_OmX" property="tgsjTgjydzOmx" />
+        <result column="TGSJ_TGMPJYDZ_AX" property="tgsjTgmpjydzAx" />
+        <result column="TGSJ_TGMPJYDZ_BX" property="tgsjTgmpjydzBx" />
+        <result column="TGSJ_TGMPJYDZ_CX" property="tgsjTgmpjydzCx" />
+        <result column="TGSJ_TGMPJYDZ_OX" property="tgsjTgmpjydzOx" />
+        <result column="TGSJ_TGMPJYDZ_AmX" property="tgsjTgmpjydzAmx" />
+        <result column="TGSJ_TGMPJYDZ_BmX" property="tgsjTgmpjydzBmx" />
+        <result column="TGSJ_TGMPJYDZ_CmX" property="tgsjTgmpjydzCmx" />
+        <result column="TGSJ_TGMPJYDZ_OmX" property="tgsjTgmpjydzOmx" />
+        <result column="TGSJ_COHL" property="tgsjCohl" />
+        <result column="TGSJ_CO2HL" property="tgsjCo2hl" />
+        <result column="TGSJ_WSHL" property="tgsjWshl" />
+        <result column="TGSJ_SFCZDXFDTP_TGP" property="tgsjSfczdxfdtpTgp" />
+        <result column="TGSJ_RDWD" property="tgsjRdwd" />
+        <result column="TGSJ_WC" property="tgsjWc" />
+        <result column="TGSJ_XDWC" property="tgsjXdwc" />
+        <result column="TGSJ_WJLJ" property="tgsjWjlj" />
+        <result column="TGSJ_ALID" property="tgsjAlid" />
+    </resultMap>
+	<select id="getTgsjById" resultMap="BaseResultMap">
+		SELECT
+		*
+		FROM
+		tgsj t
+		where
+		t.TGSJ_ALID = #{alId}
+	</select>
+</mapper>

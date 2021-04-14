@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vmms.dao.gzal.BhdzMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.vmms.model.Bhdz">
+        <id column="BHDZ_ID" property="bhdzId" />
+        <result column="BHDZ_ZHWSDZ" property="bhdzZhwsdz" />
+        <result column="BHDZ_QWSDZ" property="bhdzQwsdz" />
+        <result column="BHDZ_YLSHFFDZ" property="bhdzYlshffdz" />
+        <result column="BHDZ_CHDBHDZ" property="bhdzChdbhdz" />
+        <result column="BHDZ_HBBHDZ" property="bhdzHbbhdz" />
+        <result column="BHDZ_cs" property="bhdzCs" />
+    </resultMap>
+
+</mapper>

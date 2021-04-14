@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vmms.dao.gzal.LqqxtMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.vmms.model.Lqqxt">
+		<id column="LQQXT_ID" property="lqqxtId" />
+		<result column="LQQXT_BYQTZID" property="lqqxtByqtzid" />
+		<result column="LQQXT_YLJDQGZZT" property="lqqxtYljdqgzzt" />
+		<result column="LQQXT_SRQGZZT" property="lqqxtSrqgzzt" />
+		<result column="LQQXT_FJYBSBGZZT" property="lqqxtFjybsbgzzt" />
+		<result column="LQQXT_LQQKZXTGZZT" property="lqqxtLqqkzxtgzzt" />
+		<result column="LQQXT_LQZZBMJWCD" property="lqqxtLqzzbmjwcd" />
+		<result column="LQQXT_WJLJ" property="lqqxtWjlj" />
+		<result column="LQQXT_ALID" property="lqqxtAlid" />
+	</resultMap>
+	<select id="getLqqxtDataById" resultMap="BaseResultMap">
+		SELECT
+		*
+		FROM
+		lqqxt l
+		where
+		l.LQQXT_ALID = #{alId}
+	</select>
+</mapper>

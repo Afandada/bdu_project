@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vmms.dao.gzal.SccjMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.vmms.model.Sccj">
+        <id column="SCCJ_ID" property="sccjId" />
+        <result column="SCCJ_BM" property="sccjBm" />
+        <result column="SCCJ_MCH" property="sccjMch" />
+        <result column="SCCJ_SSHGJ" property="sccjSshgj" />
+        <result column="SCCJ_SSHCSH" property="sccjSshcsh" />
+        <result column="SCCJ_LXFSH" property="sccjLxfsh" />
+        <result column="SCCJ_JYFW" property="sccjJyfw" />
+        <result column="SCCJ_WJLJ" property="sccjWjlj" />
+    </resultMap>
+
+</mapper>

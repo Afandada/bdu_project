@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vmms.dao.sys.DepartmentMapper">
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.vmms.model.Department">
+		<id column="DepartmentId" property="DepartmentId" />
+		<result column="DepartmentName" property="DepartmentName" />
+		<result column="DepartmentParentId" property="DepartmentParentId" />
+		<result column="DepartmentPhone" property="DepartmentPhone" />
+		<result column="DepartmentRemark" property="DepartmentRemark" />
+		<result column="SubjectId" property="SubjectId" />
+		<result column="DepartmentStatus" property="DepartmentStatus" />
+		<result column="CreateUser" property="CreateUser" />
+		<result column="CreateTime" property="CreateTime" />
+	</resultMap>
+	<!-- 定义查询返回map映射结果zzj 4-24 -->
+	<resultMap id="BaseResultMapDto" type="com.vmms.controller.sys.dto.DepartmentDto">
+		<association property="self" javaType="com.vmms.model.Department">
+			<id column="DepartmentId" property="DepartmentId" />
+			<result column="DepartmentName" property="DepartmentName" />
+			<result column="DepartmentParentId" property="DepartmentParentId" />
+			<result column="DepartmentParentName" property="DepartmentParentName" />
+			<result column="DepartmentPhone" property="DepartmentPhone" />
+			<result column="DepartmentRemark" property="DepartmentRemark" />
+			<result column="SubjectId" property="SubjectId" />
+			<result column="SubjectName" property="SubjectName" />
+			<result column="DepartmentStatus" property="DepartmentStatus" />
+			<result column="CreateUser" property="CreateUser" />
+			<result column="CreateTime" property="CreateTime" />
+		</association>
+	</resultMap>
+
+
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		DepartmentId, DepartmentName, DepartmentParentId,
+		DepartmentPhone,
+		DepartmentRemark, SubjectId, DepartmentStatus,
+		CreateUser, CreateTime
+	</sql>
+	<!-- 连接查询展示所有数据 zzj 4-24 -->
+	<select id="seachAndSubject" resultMap="BaseResultMapDto">
+		SELECT
+		one.DepartmentId as DepartmentId,
+		one.DepartmentName as
+		DepartmentName,
+		one.DepartmentParentId as DepartmentParentId,
+		two.DepartmentName as DepartmentParentName ,
+		one.DepartmentPhone as
+		DepartmentPhone,
+		one.DepartmentRemark as DepartmentRemark,
+		one.SubjectId as SubjectId,
+		one.SubjectName as SubjectName ,
+		one.DepartmentStatus as DepartmentStatus,
+		one.CreateUser as CreateUser,
+		one.CreateTime as CreateTime
+		from
+		(select d.DepartmentId as
+		DepartmentId,
+		d.DepartmentName as DepartmentName,
+		d.DepartmentParentId
+		as DepartmentParentId,
+		d.DepartmentPhone as DepartmentPhone,
+		d.DepartmentRemark as DepartmentRemark,
+		d.SubjectId as SubjectId,
+		d.DepartmentStatus as DepartmentStatus,
+		d.CreateUser as CreateUser,
+		d.CreateTime as CreateTime,
+		d.DepartmentParentId as parentId,
+		s.SubjectName AS SubjectName
+		from t_department as d
+		LEFT JOIN
+		t_subject
+		as s ON s.SubjectId=d.SubjectId
+		WHERE 1=1
+		<if test="status != null and status !=''">
+		and d.DepartmentStatus = #{status}
+		</if>
+		<if test="searchname != null and searchname !=''">
+			and d.DepartmentName like concat('%',#{searchname},'%')
+		</if>
+		<if test="departmentid != null and departmentid !=''">
+			and d.DepartmentId = #{departmentid}
+		</if>
+		<if test="subjectname != null and subjectname !=''">
+			and s.SubjectName like concat('%',#{subjectname},'%')
+		</if>
+		) one
+		LEFT JOIN t_department as two ON one.parentId= two.DepartmentId
+		WHERE 1=1
+		<if test="parentStatus != null and parentStatus !=''">
+		and (two.DepartmentStatus = #{parentStatus}
+             or one.DepartmentParentId = '' or one.DepartmentParentId is null )
+		</if>
+		<if test="parentname != null and parentname !=''">
+			and two.DepartmentName like concat('%',#{parentname},'%')
+		</if>
+		<if test="parentid != null and parentid != ''">
+			and two.DepartmentId = #{parentid}
+		</if>
+
+	</select>
+
+
+</mapper>

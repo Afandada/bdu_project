@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vmms.dao.sys.OperationMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.vmms.model.Operation">
+        <id column="OperationId" property="OperationId" />
+        <result column="OperationName" property="OperationName" />
+        <result column="OperationCode" property="OperationCode" />
+        <result column="OperationRemark" property="OperationRemark" />
+        <result column="OperationStatus" property="OperationStatus" />
+        <result column="CreateUser" property="CreateUser" />
+        <result column="CreateTime" property="CreateTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        OperationId, OperationName, OperationCode, OperationRemark, OperationStatus, CreateUser, CreateTime
+    </sql>
+
+</mapper>

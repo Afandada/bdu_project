@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vmms.dao.gzal.HealthDescribeMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.vmms.model.HealthDescribe">
+        <id column="HEALTH_ID" property="healthId" />
+        <result column="HEALTH_TIME" property="healthTime" />
+        <result column="HEALTH_BYQTZID" property="healthByqtzid" />
+        <result column="HEALTH_ALID" property="healthAlid" />
+        <result column="HEALTH_WJLJ" property="healthWjlj" />
+        <result column="HEALTH_FHL" property="healthFhl" />
+        <result column="HEALTH_FWDJ" property="healthFwdj" />
+        <result column="HEALTH_SBLXSM" property="healthSblxsm" />
+        <result column="HEALTH_BT_WGDJ" property="healthBtWgdj" />
+        <result column="HEALTH_TG_WGDJ" property="healthTgWgdj" />
+        <result column="HEALTH_YZFJKG_WGDJ" property="healthYzfjkgWgdj" />
+        <result column="HEALTH_LQQXT_WGDJ" property="healthLqqxtWgdj" />
+        <result column="HEALTH_FDLBHZZ_WGDJ" property="healthFdlbhzzWgdj" />
+        <result column="HEALTH_SBKKXDJ" property="healthSbkkxdj" />
+        <result column="HEALTH_QXCS_NORMAL" property="healthQxcsNormal" />
+        <result column="HEALTH_QXCS_SERIOUS" property="healthQxcsSerious" />
+        <result column="HEALTH_QXCS_URGENT" property="healthQxcsUrgent" />
+        <result column="HEALTH_BYQGZXX_BYQTZID" property="healthByqgzxxByqtzid" />
+    </resultMap>
+     <select id="getHealthDataById" resultMap="BaseResultMap">
+		SELECT
+		*
+		FROM
+		health_describe h
+		where
+		h.HEALTH_ALID = #{alId}
+	</select>
+    
+
+</mapper>

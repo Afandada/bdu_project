@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vmms.dao.sys.MenuOperationMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.vmms.model.MenuOperation">
+		<id column="Menu_OperationId" property="menuOperationid" />
+		<result column="MenuId" property="MenuId" />
+		<result column="OperationId" property="OperationId" />
+		<result column="CreateUser" property="CreateUser" />
+		<result column="CreateTime" property="CreateTime" />
+	</resultMap>
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		Menu_OperationId, MenuId, OperationId, CreateUser,
+		CreateTime
+	</sql>
+	<!-- 通过menuId连表查询MenuOperation中带有Name -->
+	<select id="findListGetMenuOperation" resultType="com.vmms.model.MenuOperation">
+		select m.*, m.Menu_OperationId as menuOperationid ,o.OperationName,o.OperationCode
+		from t_menu_operation m
+		left JOIN t_operation o ON m.OperationId =
+		o.OperationId
+		where 1=1
+		<if test="menuId != null and menuId !=''">
+			and m.MenuId = #{menuId}
+		</if>
+		<if test="operationStatus != null and operationStatus !=''">
+			and o.OperationStatus = #{operationStatus}
+			or
+			m.OperationId
+			is NULL
+			or
+			m.OperationId = ''
+		</if>
+	</select>
+</mapper>

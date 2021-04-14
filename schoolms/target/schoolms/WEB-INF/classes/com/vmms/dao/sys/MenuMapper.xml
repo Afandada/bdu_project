@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vmms.dao.sys.MenuMapper">
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.vmms.model.Menu">
+		<id column="MenuId" property="MenuId" />
+		<result column="MenuName" property="MenuName" />
+		<result column="MenuParentId" property="MenuParentId" />
+		<result column="MenuUrl" property="MenuUrl" />
+		<result column="MenuPic" property="MenuPic" />
+		<result column="MenuLevel" property="MenuLevel" />
+		<result column="MenuType" property="MenuType" />
+		<result column="MenuNum" property="MenuNum" />
+		<result column="MenuRemark" property="MenuRemark" />
+		<result column="CreateUser" property="CreateUser" />
+		<result column="CreateTime" property="CreateTime" />
+
+	</resultMap>
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		MenuId, MenuName, MenuParentId,MenuLevel,MenuType, MenuUrl, MenuPic, MenuNum,
+		MenuRemark,CreateUser,CreateTime
+	</sql>
+
+	<!-- 连接查询展示所有数据 -->
+	<select id="findList" resultType="com.vmms.model.Menu">
+		SELECT
+		m1.*,m2.MenuName as ParentMenuName
+		from t_menu m1 left join t_menu m2
+		on m1.MenuParentId=m2.MenuId
+		WHERE 1=1
+		<if test="searchname != null and searchname !=''">
+			and m1.MenuName like concat('%',#{searchname},'%')
+		</if>
+		<if test="parentname != null and searchname !=''">
+			and m2.MenuName like concat('%',#{parentname},'%')
+		</if>
+	</select>
+	<!-- 根据父级id来进行搜索不带分页信息的menu带父级名称 -->
+	<select id="findListByParentId" resultType="com.vmms.model.Menu">
+		SELECT
+		m1.*,m2.MenuName as ParentMenuName
+		from t_menu m1 left join t_menu m2
+		on m1.MenuParentId=m2.MenuId
+		WHERE 1=1
+		<if test="parentId != null and parentId !=''">
+			and m1.MenuParentId = #{parentId}
+		</if>
+	</select>
+</mapper>

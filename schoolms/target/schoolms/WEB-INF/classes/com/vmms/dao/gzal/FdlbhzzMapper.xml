@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vmms.dao.gzal.FdlbhzzMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.vmms.model.Fdlbhzz">
+        <id column="FDLBHZZ_ID" property="fdlbhzzId" />
+        <result column="FDLBHZZ_BYQTZID" property="fdlbhzzByqtzid" />
+        <result column="FDLBHZZ_WDJZSQK" property="fdlbhzzWdjzsqk" />
+        <result column="FDLBHZZ_YWJZSQK" property="fdlbhzzYwjzsqk" />
+        <result column="FDLBHZZ_YLSFFSFCZXL" property="fdlbhzzYlsffsfczxl" />
+        <result column="FDLBHZZ_YLSFFSFCZWD" property="fdlbhzzYlsffsfczwd" />
+        <result column="FDLBHZZ_QTJDQ_SF_CZSL" property="fdlbhzzQtjdqSfCzsl" />
+        <result column="FDLBHZZ_QTJDQ_SF_CZWD" property="fdlbhzzQtjdqSfCzwd" />
+        <result column="FDLBHZZ_QTJDQ_SF_ECHLJYDZBHG" property="fdlbhzzQtjdqSfEchljydzbhg" />
+        <result column="FDLBHZZ_YLSFFSFCZ_ECHLJYDZ" property="fdlbhzzYlsffsfczEchljydz" />
+        <result column="FDLBHZZ_WJLJ" property="fdlbhzzWjlj" />
+        <result column="FDLBHZZ_ALID" property="fdlbhzzAlid" />
+        <result column="FDLBHZZ_YFYJDYZX" property="fdlbhzzYfyjdyzx" />
+        <result column="FDLBHZZ_XSQ" property="fdlbhzzXsq" />
+        <result column="FDLBHZZ_JYQ" property="fdlbhzzJyq" />
+    </resultMap>
+    <select id="getFdlbhzzDataById" resultMap="BaseResultMap">
+		SELECT
+		*
+		FROM
+		fdlbhzz f
+		where
+		f.FDLBHZZ_ALID = #{alId}
+	</select>
+
+</mapper>
